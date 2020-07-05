@@ -1,0 +1,10 @@
+{% if latest_polls %}
+    <h3>List of current polls</h3>
+    <ul>
+    {% for poll in latest_polls %}
+        <li><a href="{% url 'poll_detail' poll.id %}">{{ poll.header }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

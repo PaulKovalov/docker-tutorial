@@ -1,0 +1,14 @@
+<a href="{% url 'index' %}">Main page</a>
+{% if poll %}
+    <h3>{{ poll.header }}</h3>
+    {% for question in poll.questions.all %}
+        <h4> {{question.text}}</h4>
+        {% for answer in question.answers.all %}
+            <h5>{{answer.text}}</h5>
+            <form action="{% url 'poll_vote' poll.id question.id answer.id %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Vote {{answer.votes}}">
+            </form>
+        {% endfor %}
+    {% endfor %}
+{% endif %}
