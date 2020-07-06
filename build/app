@@ -1,0 +1,15 @@
+FROM alpine:3.12
+RUN apk update && apk add --no-cache \
+    python3 \
+    python3-dev \
+    py3-pip \
+    musl-dev \
+    libffi-dev \
+    postgresql-dev \
+    gcc
+WORKDIR home/
+COPY requirements.txt .
+RUN pip3 install -r requirements.txt
+COPY ./django_docker .
+COPY start.sh .
+CMD ./start.sh
