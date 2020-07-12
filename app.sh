@@ -1,0 +1,1 @@
+docker run --name app -p 3031:3031 docker_tutorial:latest
