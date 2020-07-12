@@ -10,6 +10,6 @@ RUN apk update && apk add --no-cache \
 WORKDIR home/
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
-COPY ./django_docker .
+COPY ./django_docker ./django_docker
 COPY start.sh .
 CMD ./start.sh
