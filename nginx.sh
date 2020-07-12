@@ -1,1 +1,1 @@
-docker run --name nginx -p 80:80 docker_tutorial_nginx:latest
+docker run --name nginx -p 127.0.0.1:80:80/tcp docker_tutorial_nginx:latest

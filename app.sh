@@ -1,1 +1,1 @@
-docker run --name app -p 3031:3031 --env-file ./vars.env docker_tutorial:latest
+docker run --name app -p 127.0.0.1:3031:3031/tcp --env-file ./vars.env docker_tutorial:latest
